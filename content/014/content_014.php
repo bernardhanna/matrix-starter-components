@@ -1,5 +1,5 @@
 <section class="relative w-full">
-  <div class="flex flex-wrap items-start w-full gap-8 py-12 mx-auto max-w-[1084px] max-md:px-5">
+  <div class="flex flex-wrap items-start w-full gap-8 py-12 mx-auto max-w-container max-lg:px-5">
     <?php $heading_tag = get_sub_field('content_014_heading_tag') ?: 'h2'; ?>
     <<?php echo esc_html($heading_tag); ?>
       class="w-full text-3xl leading-none tracking-tighter whitespace-nowrap text-neutral-900"
