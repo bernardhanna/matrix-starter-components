@@ -1,4 +1,6 @@
-<section class="relative w-full">
+<section
+  class="relative w-full"
+  style="background-color: <?php echo esc_attr(get_sub_field('background_color')); ?>;">
   <div
     class="flex flex-wrap items-center md:justify-between 
       <?php echo get_sub_field('gap') ? "gap-[" . esc_attr(get_sub_field('gap')) . "px]" : "gap-8"; ?> 

@@ -37,6 +37,10 @@ $gallery_001
     'instructions' => 'Enter vertical padding value (e.g., 2 for 2%).',
     'min' => 0,
     'max' => 100,
+  ])
+  ->addColorPicker('background_color', [
+    'label' => 'Section Background Color',
+    'default_value' => '#ffffff', // Default white background
   ]);
 
 return $gallery_001;
