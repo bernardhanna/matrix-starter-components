@@ -48,6 +48,22 @@ $content_014
       'title' => 'Discover our API',
       'target' => '_self',
     ],
+  ])
+  ->addColorPicker('background_color', [
+    'label' => 'Background Color',
+    'default_value' => '#ffffff',
+  ])
+  ->addRange('padding_y', [
+    'label' => 'Padding Y',
+    'instructions' => 'Set vertical padding for the section.',
+    'min' => 0,
+    'max' => 100,
+    'step' => 1,
+    'default_value' => 12, // Default 12%
+  ])
+  ->addTrueFalse('show_button_icon', [
+    'label' => 'Show Button Icon',
+    'default_value' => 1, // Default to enabled
   ]);
 
 return $content_014;
