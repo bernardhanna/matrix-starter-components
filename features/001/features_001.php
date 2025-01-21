@@ -1,6 +1,7 @@
 <section class="relative w-full">
   <?php
-
+    $background_color = get_sub_field('background_color');
+    $background_gradient = get_sub_field('background_gradient');
   // Determine background style
   if ($background_gradient) {
     $background_style = "background: $background_gradient;";
