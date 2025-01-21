@@ -40,7 +40,7 @@
     }
   </style>
 
-  <div id="<?php echo esc_attr($slider_id); ?>" class="features_001 md:grid md:<?php echo esc_attr($grid_classes); ?> md:gap-6 md:px-5 lg:px-24  md:mx-auto md:max-w-container  max-md:py-12 max-md:slick-slider -mt-[8rem]" role="region" aria-label="Features Overview">
+  <div id="<?php echo esc_attr($slider_id); ?>" class="features_001 md:grid md:<?php echo esc_attr($grid_classes); ?> md:gap-6 md:px-5 lg:px-24  md:mx-auto md:max-w-container  max-md:py-12 max-md:slick-slider lg:-mt-[8rem]" role="region" aria-label="Features Overview">
     <!-- Start Repeater -->
     <?php while (have_rows('features')): the_row();
       $heading_tag = get_sub_field('heading_tag') ?: 'h2';
