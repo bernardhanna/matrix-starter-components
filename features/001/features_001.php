@@ -1,18 +1,5 @@
 <section class="relative w-full">
   <?php
-  // Retrieve fields
-  $heading_tag = get_sub_field('heading_tag') ?: 'h2';
-  $heading_text = get_sub_field('heading_text') ?: 'Default Heading';
-  $subtext = get_sub_field('subtext') ?: 'Default subtext.';
-  $icon = get_sub_field('icon');
-  $icon_url = $icon['url'] ?? 'https://placehold.co/40x40';
-  $icon_alt = $icon['alt'] ?? 'Default icon';
-  $background_color = get_sub_field('background_color') ?: '#C6C6C6';
-  $background_gradient = get_sub_field('background_gradient');
-  $text_color = get_sub_field('text_color') ?: '#000000';
-  $subtext_color = get_sub_field('subtext_color') ?: '#D1D5DB';
-  $border_radius = get_sub_field('border_radius') ?: 8; // Default 8px
-  $min_height = get_sub_field('min_height') ?: 240; // Default 240px
 
   // Determine background style
   if ($background_gradient) {
@@ -55,7 +42,26 @@
 
   <div id="<?php echo esc_attr($slider_id); ?>" class="features_001 md:grid md:<?php echo esc_attr($grid_classes); ?> md:gap-6 md:px-5 lg:px-24  md:mx-auto md:max-w-container  max-md:py-12 max-md:slick-slider -mt-[8rem]" role="region" aria-label="Features Overview">
     <!-- Start Repeater -->
-    <?php while (have_rows('features')): the_row(); ?>
+    <?php while (have_rows('features')): the_row();
+      $heading_tag = get_sub_field('heading_tag') ?: 'h2';
+      $heading_text = get_sub_field('heading_text') ?: 'Default Heading';
+      $subtext = get_sub_field('subtext') ?: 'Default subtext.';
+      $icon = get_sub_field('icon');
+      $icon_url = $icon['url'] ?? 'https://placehold.co/40x40';
+      $icon_alt = $icon['alt'] ?? 'Default icon';
+      $background_color = get_sub_field('background_color') ?: '#C6C6C6';
+      $background_gradient = get_sub_field('background_gradient');
+      $text_color = get_sub_field('text_color') ?: '#000000';
+      $subtext_color = get_sub_field('subtext_color') ?: '#D1D5DB';
+      $border_radius = get_sub_field('border_radius') ?: 8; // Default 8px
+      $min_height = get_sub_field('min_height') ?: 240; // Default 240px
+      // Determine background style
+      if ($background_gradient) {
+        $background_style = "background: $background_gradient;";
+      } else {
+        $background_style = "background-color: $background_color;";
+      }
+    ?>
       <div class="flex flex-col items-start justify-start p-10 slick-item" tabindex="0"
         style="<?php echo esc_attr($background_style); ?> border-radius: <?php echo esc_attr($border_radius); ?>px; min-height: <?php echo esc_attr($min_height); ?>px;">
         <div class="flex gap-2.5 items-center">

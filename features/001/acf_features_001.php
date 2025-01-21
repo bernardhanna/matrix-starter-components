@@ -59,7 +59,7 @@ $features_001
   ])
   ->addColorPicker('background_color', [
     'label' => 'Background Color',
-    'default_value' => '#C6C6C6',
+  'default_value' => '',
   ])
   ->addText('background_gradient', [
     'label' => 'Background Gradient',
