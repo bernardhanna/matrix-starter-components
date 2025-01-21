@@ -58,7 +58,8 @@ $rgba_background = sprintf('rgba(%d, %d, %d, %.2f)', $rgb[0], $rgb[1], $rgb[2], 
 
         <!-- Dynamic Heading -->
         <<?php echo esc_attr($heading_tag); ?> class="text-5xl tracking-tighter leading-[50px] max-md:max-w-full">
-          <?php echo esc_html($heading_text); ?>
+          <?php echo wp_kses_post($heading_text); ?>
+
         </<?php echo esc_attr($heading_tag); ?>>
 
         <!-- Subtext -->
