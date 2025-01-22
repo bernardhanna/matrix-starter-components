@@ -83,6 +83,24 @@ $content_016
     'label' => 'Show SVG Icon on Button',
     'ui' => 1,
     'default_value' => 1, // Enabled by default
+  ])
+  ->addNumber('padding_top', [
+    'label' => 'Padding Top',
+    'instructions' => 'Set top padding as a percentage or pixel value.',
+    'min' => 0,
+    'max' => 100,
+    'step' => 1,
+    'append' => '%',
+    'default_value' => 0, // Default top padding
+  ])
+  ->addNumber('padding_bottom', [
+    'label' => 'Padding Bottom',
+    'instructions' => 'Set bottom padding as a percentage or pixel value.',
+    'min' => 0,
+    'max' => 100,
+    'step' => 1,
+    'append' => '%',
+    'default_value' => 0, // Default bottom padding
   ]);
 
 return $content_016;

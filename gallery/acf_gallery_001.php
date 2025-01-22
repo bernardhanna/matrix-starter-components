@@ -32,11 +32,21 @@ $gallery_001
     'min' => 0,
     'max' => 20,
   ])
-  ->addNumber('padding_y', [
-    'label' => 'Section Vertical Padding',
-    'instructions' => 'Enter vertical padding value (e.g., 2 for 2%).',
+->addNumber('padding_top', [
+  'label' => 'Padding Top',
+  'instructions' => 'Set the top padding as a percentage.',
+  'min' => 0,
+  'max' => 100,
+  'step' => 1,
+  'default_value' => 10, // Default 10%
+])
+  ->addNumber('padding_bottom', [
+    'label' => 'Padding Bottom',
+    'instructions' => 'Set the bottom padding as a percentage.',
     'min' => 0,
     'max' => 100,
+    'step' => 1,
+    'default_value' => 10, // Default 10%
   ])
   ->addColorPicker('background_color', [
     'label' => 'Section Background Color',

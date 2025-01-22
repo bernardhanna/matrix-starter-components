@@ -29,6 +29,15 @@ $content_015
     'label' => 'Heading Color',
     'default_value' => '#FFFFFF',
   ])
+  ->addColorPicker('underline_color', [
+    'label' => 'Underline Color',
+    'default_value' => '#FFA500', // Default to Orange
+  ])
+  ->addTrueFalse('underline_title', [
+    'label' => 'Underline Title',
+    'ui' => 1,
+    'default_value' => 1, // Enabled by default
+  ])
   ->addWysiwyg('paragraph_text', [
     'label' => 'Paragraph Text',
     'default_value' => '<p>Lorem ipsum dolor sit amet consectetur...</p>',
@@ -69,6 +78,14 @@ $content_015
   ->addColorPicker('button_hover_text_color', [
     'label' => 'Button Hover Text Color',
     'default_value' => '#FFFFFF',
+  ])
+  ->addColorPicker('button_border_color', [
+    'label' => 'Button Border Color',
+    'default_value' => '#FFA500', // Orange
+  ])
+  ->addColorPicker('button_hover_border_color', [
+    'label' => 'Button Hover Border Color',
+    'default_value' => '#FF4500', // Darker Orange
   ])
   ->addTrueFalse('button_icon_toggle', [
     'label' => 'Show SVG Icon on Button',

@@ -13,10 +13,12 @@ $button_text_color = get_sub_field('button_text_color');
 $button_hover_bg_color = get_sub_field('button_hover_bg_color');
 $button_hover_text_color = get_sub_field('button_hover_text_color');
 $button_icon_toggle = get_sub_field('button_icon_toggle');
+$padding_top = get_sub_field('padding_top');
+$padding_bottom = get_sub_field('padding_bottom');
 ?>
-
-<section class="relative w-full" style="background-color: <?php echo esc_attr($background_color); ?>;">
-  <div class="flex flex-col-reverse items-center w-full px-5 py-20 mx-auto md:flex-row max-w-container">
+<section class="relative w-full"
+  style="background-color: <?php echo esc_attr($background_color); ?>;">
+  <div class="flex flex-col-reverse items-center w-full px-5 pt-8 pb-8 <?php echo 'lg:pt-[' . esc_attr($padding_top) . '%] lg:pb-[' . esc_attr($padding_bottom) . '%]'; ?> mx-auto md:flex-row max-w-container">
     <div class="flex flex-col w-full px-20 md:w-1/2 max-md:px-5 max-md:py-8">
       <<?php echo esc_html($heading_tag); ?>
         class="text-3xl font-bold leading-none"
@@ -25,7 +27,7 @@ $button_icon_toggle = get_sub_field('button_icon_toggle');
       </<?php echo esc_html($heading_tag); ?>>
       <div class="flex mt-1 w-8 bg-orange-400 min-h-[4px]" role="presentation"></div>
 
-      <div class="mt-4 text-base leading-6" style="color: <?php echo esc_attr($text_color); ?>;">
+      <div class="mt-4 text-base leading-6 wp_editor" style="color: <?php echo esc_attr($text_color); ?>;">
         <?php echo wp_kses_post($paragraph_text); ?>
       </div>
 
@@ -46,14 +48,22 @@ $button_icon_toggle = get_sub_field('button_icon_toggle');
 
       <?php if ($button_link): ?>
         <a href="<?php echo esc_url($button_link['url']); ?>"
-          class="inline-flex items-center justify-center max-w-full gap-2 px-8 py-4 mt-8 text-sm font-semibold leading-none rounded md:max-w-max"
+          class="inline-flex items-center justify-center max-w-full gap-2 px-8 py-4 mt-8 text-sm font-semibold leading-none rounded w-full md:w-fit md:max-w-fit group"
           style="
             background-color: <?php echo esc_attr($button_bg_color); ?>;
-            color: <?php echo esc_attr($button_text_color); ?>;"
-          onmouseover="this.style.backgroundColor='<?php echo esc_attr($button_hover_bg_color); ?>'; this.style.color='<?php echo esc_attr($button_hover_text_color); ?>';"
-          onmouseout="this.style.backgroundColor='<?php echo esc_attr($button_bg_color); ?>'; this.style.color='<?php echo esc_attr($button_text_color); ?>';"
+            color: <?php echo esc_attr($button_text_color); ?>;
+            text-decoration: none;
+            border: 1px solid <?php echo esc_attr(get_sub_field('button_border_color')); ?>;"
+          onmouseover="
+            this.style.backgroundColor='<?php echo esc_attr($button_hover_bg_color); ?>';
+            this.style.color='<?php echo esc_attr($button_hover_text_color); ?>';
+            this.style.borderColor='<?php echo esc_attr(get_sub_field('button_hover_border_color')); ?>';"
+          onmouseout="
+            this.style.backgroundColor='<?php echo esc_attr($button_bg_color); ?>';
+            this.style.color='<?php echo esc_attr($button_text_color); ?>';
+            this.style.borderColor='<?php echo esc_attr(get_sub_field('button_border_color')); ?>';"
           target="<?php echo esc_attr($button_link['target']); ?>">
-          <span><?php echo esc_html($button_link['title']); ?></span>
+          <span class="no-underline group-hover:no-underline"><?php echo esc_html($button_link['title']); ?></span>
           <?php if ($button_icon_toggle): ?>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -62,10 +72,13 @@ $button_icon_toggle = get_sub_field('button_icon_toggle');
         </a>
       <?php endif; ?>
     </div>
-    <div class="flex w-full overflow-hidden md:w-1/2">
-      <img src="<?php echo esc_url($main_image['url'] ?? get_template_directory_uri() . '/assets/images/placeholder.png'); ?>"
-        alt="<?php echo esc_attr($main_image['alt'] ?? 'Placeholder Image'); ?>"
-        class="object-cover w-full h-[304px] sm:h-[434px] rounded-custom-lg" />
-    </div>
+
+    <?php if ($main_image): ?>
+      <div class="flex w-full overflow-hidden md:w-1/2">
+        <img src="<?php echo esc_url($main_image['url']); ?>"
+          alt="<?php echo esc_attr($main_image['alt']); ?>"
+          class="object-cover w-full lg:w-[505px] h-[304px] sm:h-[434px] rounded-custom-lg" />
+      </div>
+    <?php endif; ?>
   </div>
 </section>

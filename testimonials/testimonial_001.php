@@ -12,11 +12,11 @@ $is_slider = count($testimonials) > 1;
   role="region"
   aria-label="Customer Testimonial"
   style="background-color: <?php echo esc_attr($background_color); ?>;">
-  <div id="<?php echo esc_attr($slider_id); ?>" class="flex flex-col w-full mx-auto max-w-[1180px] pt-24 pb-24 <?php echo $is_slider ? 'slick-slider flex-col' : 'lg:flex-row'; ?>">
+  <div id="<?php echo esc_attr($slider_id); ?>" class="flex flex-col w-full mx-auto max-w-[1000px] pt-24 pb-24 <?php echo $is_slider ? 'slick-slider flex-col' : 'lg:flex-row'; ?>">
     <?php if ($testimonials): ?>
       <?php foreach ($testimonials as $testimonial): ?>
-        <div class="flex flex-row w-full slick-item">
-          <div class="relative flex flex-col justify-start w-1/2">
+        <div class="flex flex-row w-full slick-item justify-between">
+          <div class="relative flex flex-col justify-start w-3/5">
             <div class="flex flex-row w-full">
               <?php if ($testimonial['show_svg']): ?>
                 <div class="absolute left-[-114px] -top-[1.6rem]">
@@ -36,7 +36,7 @@ $is_slider = count($testimonials) > 1;
               </div>
             </div>
           </div>
-          <div class="relative flex flex-col justify-center w-1/2 mx-auto">
+          <div class="relative flex flex-col justify-center w-2/5 mx-auto">
             <img
               loading="lazy"
               src="<?php echo esc_url($testimonial['author_image']['url'] ?? get_template_directory_uri() . '/assets/images/placeholder.png'); ?>"

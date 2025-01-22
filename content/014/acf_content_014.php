@@ -25,6 +25,14 @@ $content_014
     'placeholder' => 'Enter heading text here...',
     'default_value' => 'Content 014',
   ])
+  ->addColorPicker('heading_text_color', [
+    'label' => 'Heading Text Color',
+    'default_value' => '#000000', // Black by default
+  ])
+  ->addColorPicker('underline_color', [
+    'label' => 'Underline Color',
+    'default_value' => '#1e1f3d', // Secondary by default
+  ])
   ->addWysiwyg('content_014_subheading_text', [
     'label' => 'Subheading Text',
     'tabs' => 'all',
@@ -49,6 +57,22 @@ $content_014
       'target' => '_self',
     ],
   ])
+  ->addColorPicker('button_background_color', [
+    'label' => 'Button Background Color',
+    'default_value' => '#1e1f3d', // Secondary by default
+  ])
+  ->addColorPicker('button_text_color', [
+    'label' => 'Button Text Color',
+    'default_value' => '#ffffff', // White by default
+  ])
+  ->addColorPicker('button_hover_background_color', [
+    'label' => 'Button Hover Background Color',
+    'default_value' => '#fb6407', // Primary hover by default
+  ])
+  ->addColorPicker('button_hover_text_color', [
+    'label' => 'Button Hover Text Color',
+    'default_value' => '#ffffff', // White by default
+  ])
   ->addColorPicker('background_color', [
     'label' => 'Background Color',
     'default_value' => '#ffffff',
@@ -67,3 +91,4 @@ $content_014
   ]);
 
 return $content_014;
+?>
