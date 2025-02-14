@@ -8,6 +8,9 @@ $content_015 = new FieldsBuilder('content_015', [
 ]);
 
 $content_015
+
+  // Content Tab
+  ->addTab('Content', ['placement' => 'top'])
   ->addSelect('heading_tag', [
     'label' => 'Heading Tag',
     'choices' => [
@@ -25,14 +28,6 @@ $content_015
     'placeholder' => 'Enter your heading text...',
     'default_value' => 'Content 0015',
   ])
-  ->addColorPicker('heading_color', [
-    'label' => 'Heading Color',
-    'default_value' => '#FFFFFF',
-  ])
-  ->addColorPicker('underline_color', [
-    'label' => 'Underline Color',
-    'default_value' => '#FFA500', // Default to Orange
-  ])
   ->addTrueFalse('underline_title', [
     'label' => 'Underline Title',
     'ui' => 1,
@@ -42,17 +37,9 @@ $content_015
     'label' => 'Paragraph Text',
     'default_value' => '<p>Lorem ipsum dolor sit amet consectetur...</p>',
   ])
-  ->addColorPicker('text_color', [
-    'label' => 'Text Color',
-    'default_value' => '#FFFFFF',
-  ])
   ->addImage('main_image', [
     'label' => 'Main Image',
     'return_format' => 'array',
-  ])
-  ->addColorPicker('background_color', [
-    'label' => 'Section Background Color',
-    'default_value' => '#025A70',
   ])
   ->addLink('button_link', [
     'label' => 'Button Link',
@@ -62,6 +49,24 @@ $content_015
       'title' => 'Try the demo - FREE',
       'target' => '_self',
     ],
+  ])
+  // Design Tab
+  ->addTab('Design', ['placement' => 'top'])
+  ->addColorPicker('background_color', [
+    'label' => 'Section Background Color',
+    'default_value' => '#025A70',
+  ])
+  ->addColorPicker('heading_color', [
+    'label' => 'Heading Color',
+    'default_value' => '#FFFFFF',
+  ])
+  ->addColorPicker('underline_color', [
+    'label' => 'Underline Color',
+    'default_value' => '#FFA500', // Default to Orange
+  ])
+  ->addColorPicker('text_color', [
+    'label' => 'Text Color',
+    'default_value' => '#FFFFFF',
   ])
   ->addColorPicker('button_bg_color', [
     'label' => 'Button Background Color',

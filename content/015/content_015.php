@@ -16,14 +16,14 @@ $button_icon_toggle = get_sub_field('button_icon_toggle');
 <div
   class="flex w-full overflow-hidden"
   style="background-color: <?php echo esc_attr($background_color); ?>;">
-  <div class="flex flex-col w-full mx-auto md:flex-row max-w-container">
+  <div class="flex flex-col w-full mx-auto md:flex-row max-w-[1280px]">
     <img
       loading="lazy"
       src="<?php echo esc_url($main_image['url'] ?? get_template_directory_uri() . '/assets/images/placeholder.png'); ?>"
       alt="<?php echo esc_attr($main_image['alt'] ?? 'Placeholder Image'); ?>"
-      class="object-cover w-full max-w-full md:max-w-[50%] max-sm:h-[315px] lg:h-full" />
-    <div class="flex flex-col w-full my-auto max-lg:px-5 max-lg:py-5">
-      <div class="flex flex-col w-full max-w-full px-5 lg:w-4/5 lg:px-16">
+      class="object-cover w-full max-w-full md:max-w-[50%] max-sm:h-[315px] h-[494px]" />
+    <div class="flex flex-col items-center justify-center w-full my-automax-xl:px-5 max-lg:py-5">
+      <div class="flex flex-col items-center justify-center w-full px-0 lg:w-4/5 lg:max-w-[448px] max-xl:px-5">
         <div class="flex flex-col w-full">
           <<?php echo esc_html($heading_tag); ?>
             class="w-full text-3xl font-bold leading-10"
@@ -42,7 +42,7 @@ $button_icon_toggle = get_sub_field('button_icon_toggle');
         </div>
         <?php if ($button_link): ?>
           <a href="<?php echo esc_url($button_link['url']); ?>"
-            class="flex gap-2 justify-center items-center self-start px-8 py-4 mt-8 text-sm font-semibold leading-none rounded border border-solid min-h-[56px] max-lg:px-5 no-underline"
+            class="flex gap-2 justify-center items-center self-start px-8 py-4 mt-8 text-sm font-semibold leading-none rounded border border-solid min-h-[56px]max-xl:px-5 no-underline w-full md:w-fit"
             style="
               background-color: <?php echo esc_attr($button_bg_color); ?>;
               color: <?php echo esc_attr($button_text_color); ?>;

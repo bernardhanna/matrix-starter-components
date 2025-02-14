@@ -1,0 +1,49 @@
+<div class="flex flex-col w-full max-md:max-w-full">
+  <div class="flex flex-col items-end w-full gap-6 lg:flex-row max-md:max-w-full">
+    <div class="flex flex-col flex-1 shrink basis-16 min-h-[74px] w-full">
+      <label for="fullName" class="flex-1 w-full text-xs font-bold shrink text-slate-700">
+        Full name
+      </label>
+      <div class="flex flex-col flex-1 w-full mt-2 text-sm leading-none text-gray-500">
+        [text* first-name class:form-input placeholder "Full name"]
+      </div>
+    </div>
+    <div class="flex flex-col flex-1 shrink basis-16 min-h-[74px] w-full">
+      <label for="emailAddress" class="flex-1 w-full text-xs font-bold shrink text-slate-700">
+        Email Address*
+      </label>
+      <div class="flex flex-col flex-1 w-full mt-2 text-sm leading-none text-gray-500">
+        [email* emailAddress class:form-input placeholder "Email Address"]
+      </div>
+    </div>
+    [submit class:form-submit "Subscribe"]
+  </div>
+  <div class="flex flex-wrap items-center self-start gap-2 mt-4 max-md:max-w-full">
+    <div class="flex overflow-hidden flex-col justify-center items-center my-auto w-6 rounded min-h-[24px]">
+      [acceptance termsAgreement id:termsAgreement class:form-checkbox][/acceptance]
+    </div>
+    <label for="termsAgreement" class="privacy-text">
+      By signing to our newsletter, you agree to our
+      <a target="_blank" href="/terms" class="underline privacy-link text-[#013643]">Terms & Conditions</a>
+      &
+      <a target="_blank" href="/privacy" class="underline privacy-link text-[#013643]">Privacy Policy</a>.
+    </label>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const submitButton = document.querySelector('.wpcf7-submit');  // Changed selector
+    const acceptanceCheckbox = document.querySelector('.wpcf7-acceptance input');  // Changed selector
+
+    if (submitButton && acceptanceCheckbox) {
+      // Set initial state
+      submitButton.disabled = true;
+
+      // Listen for changes on the checkbox
+      acceptanceCheckbox.addEventListener('change', function () {
+        submitButton.disabled = !this.checked;
+      });
+    }
+  });
+</script>

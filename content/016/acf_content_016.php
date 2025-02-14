@@ -8,6 +8,9 @@ $content_016 = new FieldsBuilder('content_016', [
 ]);
 
 $content_016
+
+  // Content Tab
+  ->addTab('Content', ['placement' => 'top'])
   ->addSelect('heading_tag', [
     'label' => 'Heading Tag',
     'choices' => [
@@ -33,10 +36,6 @@ $content_016
     'label' => 'Main Image',
     'return_format' => 'array',
   ])
-  ->addColorPicker('background_color', [
-    'label' => 'Section Background Color',
-    'default_value' => '#FFFFFF',
-  ])
   ->addRepeater('list_items', [
     'label' => 'List Items',
     'button_label' => 'Add List Item',
@@ -50,10 +49,6 @@ $content_016
     'label' => 'Paragraph Text',
     'default_value' => '<p>Effective data usage can positively impact on all aspects of an organisation\'s performance.</p>',
   ])
-  ->addColorPicker('text_color', [
-    'label' => 'Text Color',
-    'default_value' => '#333333',
-  ])
   ->addLink('button_link', [
     'label' => 'Button Link',
     'return_format' => 'array',
@@ -62,6 +57,16 @@ $content_016
       'title' => 'See our case studies',
       'target' => '_self',
     ],
+  ])
+  // Design Tab
+  ->addTab('Design', ['placement' => 'top'])
+  ->addColorPicker('background_color', [
+    'label' => 'Section Background Color',
+    'default_value' => '#FFFFFF',
+  ])
+  ->addColorPicker('text_color', [
+    'label' => 'Text Color',
+    'default_value' => '#333333',
   ])
   ->addColorPicker('button_bg_color', [
     'label' => 'Button Background Color',
@@ -84,23 +89,24 @@ $content_016
     'ui' => 1,
     'default_value' => 1, // Enabled by default
   ])
+
+  // Layout Tab
+  ->addTab('Layout', ['placement' => 'top'])
   ->addNumber('padding_top', [
-    'label' => 'Padding Top',
-    'instructions' => 'Set top padding as a percentage or pixel value.',
+    'label' => 'Padding Top (rem)',
+    'instructions' => 'Enter the top padding in rem (e.g., 10 for 10rem).',
     'min' => 0,
     'max' => 100,
     'step' => 1,
-    'append' => '%',
-    'default_value' => 0, // Default top padding
+    'default_value' => 10, // Default to 10rem
   ])
   ->addNumber('padding_bottom', [
-    'label' => 'Padding Bottom',
-    'instructions' => 'Set bottom padding as a percentage or pixel value.',
+    'label' => 'Padding Bottom (rem)',
+    'instructions' => 'Enter the bottom padding in rem (e.g., 10 for 10rem).',
     'min' => 0,
     'max' => 100,
     'step' => 1,
-    'append' => '%',
-    'default_value' => 0, // Default bottom padding
+    'default_value' => 10, // Default to 10rem
   ]);
 
 return $content_016;

@@ -8,10 +8,9 @@ $testimonial_001 = new FieldsBuilder('testimonial_001', [
 ]);
 
 $testimonial_001
-  ->addColorPicker('background_color', [
-    'label' => 'Section Background Color',
-    'default_value' => '#FFFF00', // Default yellow background
-  ])
+
+  // Content Tab
+  ->addTab('Content', ['placement' => 'top'])
   ->addRepeater('testimonials', [
     'label' => 'Testimonials',
     'min' => 1,
@@ -24,7 +23,7 @@ $testimonial_001
   ->addText('author', [
     'label' => 'Author Name',
     'placeholder' => 'Enter the author name...',
-    'default_value' => 'Dara Keogh, CEO, GeoDirectory',
+    'default_value' => 'John Doe, CEO, GeoDirectory',
   ])
   ->addImage('author_image', [
     'label' => 'Author Image',
@@ -35,6 +34,13 @@ $testimonial_001
     'ui' => 1,
     'default_value' => 1,
   ])
-  ->endRepeater();
+  ->endRepeater()
+
+  // Design Tab
+  ->addTab('Design', ['placement' => 'top'])
+  ->addColorPicker('background_color', [
+    'label' => 'Section Background Color',
+    'default_value' => '#FFFF00', // Default yellow background
+  ]);
 
 return $testimonial_001;
